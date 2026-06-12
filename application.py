@@ -9,8 +9,8 @@ app=application
 
 
 ## import ridge regressor and standard sclaer pickle file
-ridge_model = pickle.load(open('D:\\Udemy\\ML&DL\\Projects\\Algerian_ForestFire_Predictor\\models\\ridgeregression.pkl','rb'))
-standard_scaler =pickle.load(open('D:\\Udemy\\ML&DL\\Projects\\Algerian_ForestFire_Predictor\\models\\Scaler.pkl','rb'))
+ridge_model = pickle.load(open('models\\ridgeregression.pkl','rb'))
+standard_scaler =pickle.load(open('models\\Scaler.pkl','rb'))
 
 @app.route("/")
 def index():
