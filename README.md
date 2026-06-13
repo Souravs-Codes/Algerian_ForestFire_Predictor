@@ -13,11 +13,24 @@ The project covers the complete ML workflow from data preprocessing and model tr
 
 ## 🌐 Live Demo
 
-**Try the application here:**
+## 📱 Mobile Access Note
 
-http://algerianforestfirepredictor-env.eba-wa2ustx4.ap-south-1.elasticbeanstalk.com/
+If the application does not load on mobile devices or displays a connection error, make sure you are using the **HTTP** version of the URL instead of **HTTPS**.
 
----
+✅ Working URL:
+
+```text
+http://algerianforestfirepredictor-env.eba-wa2ustx4.ap-south-1.elasticbeanstalk.com
+```
+
+❌ Do not use:
+
+```text
+https://algerianforestfirepredictor-env.eba-wa2ustx4.ap-south-1.elasticbeanstalk.com
+```
+
+The application is currently deployed using the default AWS Elastic Beanstalk domain, which does not have SSL/HTTPS configured. Future versions will include HTTPS support through a custom domain and SSL certificate.
+
 
 ## 🚀 Project Highlights
 
