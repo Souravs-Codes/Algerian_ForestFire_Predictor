@@ -33,7 +33,7 @@
 
         .container{
             width:100%;
-            max-width:700px;
+            max-width:800px;
             background:rgba(255,255,255,0.08);
             border:1px solid rgba(255,255,255,0.15);
             backdrop-filter:blur(10px);
@@ -43,13 +43,26 @@
             box-shadow:0 15px 40px rgba(0,0,0,0.4);
         }
 
+        .back-btn{
+            display:inline-block;
+            text-decoration:none;
+            color:white;
+            margin-bottom:25px;
+            font-size:15px;
+            transition:0.3s;
+        }
+
+        .back-btn:hover{
+            color:#ff6b35;
+        }
+
         .title{
             text-align:center;
             margin-bottom:30px;
         }
 
         .title h1{
-            font-size:2.5rem;
+            font-size:2.7rem;
             margin-bottom:10px;
         }
 
@@ -59,6 +72,7 @@
 
         .title p{
             color:#ddd;
+            font-size:1rem;
         }
 
         form{
@@ -104,10 +118,39 @@
             box-shadow:0px 10px 25px rgba(255,107,53,0.5);
         }
 
+        .guide{
+            margin-top:25px;
+            background:rgba(255,255,255,0.08);
+            border-radius:15px;
+            padding:20px;
+        }
+
+        .guide h3{
+            color:#ff6b35;
+            text-align:center;
+            margin-bottom:15px;
+        }
+
+        .guide-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:10px;
+        }
+
+        .guide p{
+            color:#ddd;
+            font-size:14px;
+            line-height:1.5;
+        }
+
+        .guide strong{
+            color:white;
+        }
+
         .result{
             margin-top:25px;
             text-align:center;
-            padding:20px;
+            padding:25px;
             border-radius:15px;
             background:rgba(255,255,255,0.1);
         }
@@ -123,17 +166,13 @@
             color:#4dff91;
         }
 
-        .back-btn{
-            display:inline-block;
-            text-decoration:none;
-            color:white;
-            margin-bottom:25px;
-            font-size:14px;
-        }
-
         @media(max-width:768px){
 
             form{
+                grid-template-columns:1fr;
+            }
+
+            .guide-grid{
                 grid-template-columns:1fr;
             }
 
@@ -157,28 +196,41 @@
 
     <div class="title">
         <h1>🔥 Forest Fire <span>Prediction</span></h1>
-        <p>Enter environmental parameters to estimate Fire Weather Index (FWI)</p>
+        <p>
+            Enter environmental and weather parameters to estimate
+            the Fire Weather Index (FWI)
+        </p>
     </div>
 
     <form action="{{ url_for('predict_datapoint') }}" method="post">
 
-        <input type="number" step="any" name="Temperature" placeholder="🌡 Temperature" required>
+        <input type="number" step="any" name="Temperature"
+        placeholder="🌡 Temperature (°C)" required>
 
-        <input type="number" step="any" name="RH" placeholder="💧 Relative Humidity (RH)" required>
+        <input type="number" step="any" name="RH"
+        placeholder="💧 RH - Relative Humidity (%)" required>
 
-        <input type="number" step="any" name="Ws" placeholder="🌬 Wind Speed" required>
+        <input type="number" step="any" name="Ws"
+        placeholder="🌬 Ws - Wind Speed (km/h)" required>
 
-        <input type="number" step="any" name="Rain" placeholder="🌧 Rainfall" required>
+        <input type="number" step="any" name="Rain"
+        placeholder="🌧 Rainfall (mm)" required>
 
-        <input type="number" step="any" name="FFMC" placeholder="🔥 FFMC" required>
+        <input type="number" step="any" name="FFMC"
+        placeholder="🔥 FFMC - Fine Fuel Moisture Code" required>
 
-        <input type="number" step="any" name="DMC" placeholder="📊 DMC" required>
+        <input type="number" step="any" name="DMC"
+        placeholder="📊 DMC - Duff Moisture Code" required>
 
-        <input type="number" step="any" name="ISI" placeholder="📈 ISI" required>
+        <input type="number" step="any" name="ISI"
+        placeholder="📈 ISI - Initial Spread Index" required>
 
-        <input type="number" step="any" name="Classes" placeholder="🏷 Class" required>
+        <input type="number" step="any" name="Classes"
+        placeholder="🏷 Classes (0 = No Fire, 1 = Fire)" required>
 
-        <input type="number" step="any" name="Region" placeholder="🌍 Region" required class="full-width">
+        <input type="number" step="any" name="Region"
+        placeholder="🌍 Region (0 or 1)" required
+        class="full-width">
 
         <button type="submit">
             Predict Fire Weather Index
@@ -186,12 +238,43 @@
 
     </form>
 
+    <div class="guide">
+
+        <h3>📖 Parameter Guide</h3>
+
+        <div class="guide-grid">
+
+            <p><strong>Temperature:</strong> Air temperature in °C</p>
+
+            <p><strong>RH:</strong> Relative Humidity (%)</p>
+
+            <p><strong>Ws:</strong> Wind Speed (km/h)</p>
+
+            <p><strong>Rain:</strong> Rainfall (mm)</p>
+
+            <p><strong>FFMC:</strong> Fine Fuel Moisture Code</p>
+
+            <p><strong>DMC:</strong> Duff Moisture Code</p>
+
+            <p><strong>ISI:</strong> Initial Spread Index</p>
+
+            <p><strong>Classes:</strong> 0 = No Fire, 1 = Fire</p>
+
+            <p><strong>Region:</strong> Region Identifier</p>
+
+        </div>
+
+    </div>
+
     {% if results %}
     <div class="result">
-        <h2>Prediction Result</h2>
+
+        <h2>🔥 Predicted Fire Weather Index</h2>
+
         <div class="prediction">
             {{ results }}
         </div>
+
     </div>
     {% endif %}
 
