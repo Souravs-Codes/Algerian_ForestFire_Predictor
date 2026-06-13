@@ -25,22 +25,31 @@
             url("https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=1600&q=80");
             background-size:cover;
             background-position:center;
+
             display:flex;
             justify-content:center;
-            align-items:center;
-            padding:40px 20px;
+            align-items:flex-start;
+
+            padding:50px 20px;
         }
 
         .container{
             width:100%;
             max-width:850px;
+
             background:rgba(255,255,255,0.08);
             border:1px solid rgba(255,255,255,0.15);
-            backdrop-filter:blur(10px);
+            backdrop-filter:blur(12px);
+
             border-radius:25px;
             padding:40px;
+
             color:white;
+
             box-shadow:0 15px 40px rgba(0,0,0,0.4);
+
+            margin-top:20px;
+            margin-bottom:20px;
         }
 
         .back-btn{
@@ -57,7 +66,7 @@
 
         .back-btn:hover{
             transform:translateY(-2px);
-            box-shadow:0px 8px 20px rgba(255,107,53,0.4);
+            box-shadow:0 8px 20px rgba(255,107,53,0.4);
         }
 
         .title{
@@ -66,7 +75,7 @@
         }
 
         .title h1{
-            font-size:2.8rem;
+            font-size:2.3rem;
             margin-bottom:10px;
         }
 
@@ -77,6 +86,7 @@
         .title p{
             color:#ddd;
             font-size:1rem;
+            line-height:1.6;
         }
 
         form{
@@ -87,17 +97,21 @@
 
         input{
             width:100%;
-            padding:14px;
+            padding:15px;
             border:none;
             border-radius:12px;
-            background:rgba(255,255,255,0.1);
+            background:rgba(255,255,255,0.12);
             color:white;
             outline:none;
             font-size:15px;
         }
 
         input::placeholder{
-            color:#d0d0d0;
+            color:#d6d6d6;
+        }
+
+        input:focus{
+            border:1px solid #ff6b35;
         }
 
         .full-width{
@@ -106,20 +120,24 @@
 
         button{
             grid-column:1/3;
-            padding:15px;
+
+            padding:16px;
             border:none;
             border-radius:50px;
+
             background:#ff6b35;
             color:white;
+
             font-size:18px;
             font-weight:600;
+
             cursor:pointer;
             transition:0.3s;
         }
 
         button:hover{
             transform:translateY(-3px);
-            box-shadow:0px 10px 25px rgba(255,107,53,0.5);
+            box-shadow:0 10px 25px rgba(255,107,53,0.5);
         }
 
         .guide{
@@ -144,7 +162,6 @@
 
         .guide p{
             color:#ddd;
-            font-size:14px;
             line-height:1.6;
         }
 
@@ -155,8 +172,11 @@
         .result{
             margin-top:30px;
             text-align:center;
+
             padding:25px;
+
             border-radius:15px;
+
             background:rgba(255,255,255,0.1);
             border:1px solid rgba(255,255,255,0.1);
         }
@@ -174,6 +194,10 @@
 
         @media(max-width:768px){
 
+            .container{
+                padding:25px;
+            }
+
             form{
                 grid-template-columns:1fr;
             }
@@ -188,11 +212,11 @@
             }
 
             .title h1{
-                font-size:2rem;
+                font-size:1.8rem;
             }
 
-            .container{
-                padding:25px;
+            input{
+                padding:14px;
             }
         }
 
@@ -206,9 +230,10 @@
 
     <div class="title">
         <h1>🔥 Forest Fire <span>Prediction</span></h1>
+
         <p>
-            Enter environmental and weather parameters to estimate
-            the Fire Weather Index (FWI)
+            Enter environmental and weather parameters
+            to estimate the Fire Weather Index (FWI)
         </p>
     </div>
 
@@ -239,8 +264,8 @@
         placeholder="🏷 Classes (0 = No Fire, 1 = Fire)" required>
 
         <input type="number" step="any" name="Region"
-        placeholder="🌍 Region (0 or 1)" required
-        class="full-width">
+        placeholder="🌍 Region (0 or 1)"
+        class="full-width" required>
 
         <button type="submit">
             🔥 Predict Fire Weather Index
@@ -270,7 +295,7 @@
 
             <p><strong>🏷 Classes:</strong> 0 = No Fire, 1 = Fire</p>
 
-            <p><strong>🌍 Region:</strong> Region Identifier (0 or 1)</p>
+            <p><strong>🌍 Region:</strong> Region Identifier</p>
 
         </div>
 
