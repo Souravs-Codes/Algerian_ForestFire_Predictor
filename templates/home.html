@@ -33,7 +33,7 @@
 
         .container{
             width:100%;
-            max-width:800px;
+            max-width:850px;
             background:rgba(255,255,255,0.08);
             border:1px solid rgba(255,255,255,0.15);
             backdrop-filter:blur(10px);
@@ -46,14 +46,18 @@
         .back-btn{
             display:inline-block;
             text-decoration:none;
+            background:#ff6b35;
             color:white;
+            padding:10px 20px;
+            border-radius:30px;
+            font-weight:600;
             margin-bottom:25px;
-            font-size:15px;
             transition:0.3s;
         }
 
         .back-btn:hover{
-            color:#ff6b35;
+            transform:translateY(-2px);
+            box-shadow:0px 8px 20px rgba(255,107,53,0.4);
         }
 
         .title{
@@ -62,7 +66,7 @@
         }
 
         .title h1{
-            font-size:2.7rem;
+            font-size:2.8rem;
             margin-bottom:10px;
         }
 
@@ -119,28 +123,29 @@
         }
 
         .guide{
-            margin-top:25px;
+            margin-top:30px;
             background:rgba(255,255,255,0.08);
             border-radius:15px;
-            padding:20px;
+            padding:25px;
         }
 
         .guide h3{
             color:#ff6b35;
             text-align:center;
-            margin-bottom:15px;
+            margin-bottom:20px;
+            font-size:1.3rem;
         }
 
         .guide-grid{
             display:grid;
             grid-template-columns:1fr 1fr;
-            gap:10px;
+            gap:12px;
         }
 
         .guide p{
             color:#ddd;
             font-size:14px;
-            line-height:1.5;
+            line-height:1.6;
         }
 
         .guide strong{
@@ -148,11 +153,12 @@
         }
 
         .result{
-            margin-top:25px;
+            margin-top:30px;
             text-align:center;
             padding:25px;
             border-radius:15px;
             background:rgba(255,255,255,0.1);
+            border:1px solid rgba(255,255,255,0.1);
         }
 
         .result h2{
@@ -161,7 +167,7 @@
         }
 
         .prediction{
-            font-size:2rem;
+            font-size:2.2rem;
             font-weight:700;
             color:#4dff91;
         }
@@ -176,13 +182,17 @@
                 grid-template-columns:1fr;
             }
 
-            button,
-            .full-width{
+            .full-width,
+            button{
                 grid-column:auto;
             }
 
             .title h1{
                 font-size:2rem;
+            }
+
+            .container{
+                padding:25px;
             }
         }
 
@@ -192,7 +202,7 @@
 
 <div class="container">
 
-    <a href="/" class="back-btn">← Back to Home</a>
+    <a href="/" class="back-btn">🏠 Back to Home</a>
 
     <div class="title">
         <h1>🔥 Forest Fire <span>Prediction</span></h1>
@@ -233,7 +243,7 @@
         class="full-width">
 
         <button type="submit">
-            Predict Fire Weather Index
+            🔥 Predict Fire Weather Index
         </button>
 
     </form>
@@ -244,23 +254,23 @@
 
         <div class="guide-grid">
 
-            <p><strong>Temperature:</strong> Air temperature in °C</p>
+            <p><strong>🌡 Temperature:</strong> Air temperature in Celsius (°C)</p>
 
-            <p><strong>RH:</strong> Relative Humidity (%)</p>
+            <p><strong>💧 RH:</strong> Relative Humidity (%)</p>
 
-            <p><strong>Ws:</strong> Wind Speed (km/h)</p>
+            <p><strong>🌬 Ws:</strong> Wind Speed (km/h)</p>
 
-            <p><strong>Rain:</strong> Rainfall (mm)</p>
+            <p><strong>🌧 Rain:</strong> Rainfall (mm)</p>
 
-            <p><strong>FFMC:</strong> Fine Fuel Moisture Code</p>
+            <p><strong>🔥 FFMC:</strong> Fine Fuel Moisture Code</p>
 
-            <p><strong>DMC:</strong> Duff Moisture Code</p>
+            <p><strong>📊 DMC:</strong> Duff Moisture Code</p>
 
-            <p><strong>ISI:</strong> Initial Spread Index</p>
+            <p><strong>📈 ISI:</strong> Initial Spread Index</p>
 
-            <p><strong>Classes:</strong> 0 = No Fire, 1 = Fire</p>
+            <p><strong>🏷 Classes:</strong> 0 = No Fire, 1 = Fire</p>
 
-            <p><strong>Region:</strong> Region Identifier</p>
+            <p><strong>🌍 Region:</strong> Region Identifier (0 or 1)</p>
 
         </div>
 
