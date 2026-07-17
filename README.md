@@ -204,13 +204,29 @@ Benefits:
 
 ## 📸 Application Screenshots
 
-### Home Page
+## 📸 Application Screenshots
 
-(Add Screenshot Here)
+### 🏠 Home Page
 
-### Prediction Page
+<p align="center">
+  <img src="Screenshots/Home%20(1).png" width="900">
+</p>
 
-(Add Screenshot Here)
+---
+
+### 🔥 Features Section
+
+<p align="center">
+  <img src="Screenshots/Features.png" width="900">
+</p>
+
+---
+
+### 📊 Prediction Page
+
+<p align="center">
+  <img src="Screenshots/Predictor.png" width="900">
+</p>
 
 ---
 
