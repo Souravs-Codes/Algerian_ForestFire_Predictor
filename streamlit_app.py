@@ -443,38 +443,64 @@ except Exception as e:
 # ============================================================
 
 with st.sidebar:
-
-    st.markdown(
-        """
+    
+        st.html("""
         <div style="
             text-align:center;
             padding:15px 5px 25px 5px;
         ">
-
+    
             <div style="
                 font-size:52px;
             ">
                 🔥
             </div>
-
+    
             <h2 style="
                 color:#f0fdf4;
                 margin-bottom:5px;
             ">
                 Forest Fire
             </h2>
-
+    
             <p style="
                 color:#86a996;
                 font-size:14px;
             ">
                 FWI Prediction System
             </p>
-
+    
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+        """)
+    
+        st.markdown("---")
+    
+        st.markdown("""
+    ### 🌲 About
+    
+    This application predicts the
+    **Fire Weather Index (FWI)** using
+    environmental and weather-related
+    parameters.
+    
+    ### 🤖 Model
+    
+    **Ridge Regression**
+    
+    ### 🎯 Target
+    
+    **Fire Weather Index (FWI)**
+    
+    ### ⚙️ Pipeline
+    
+    Data → Scaling → Ridge Regression → FWI
+    """)
+    
+        st.markdown("---")
+    
+        st.caption(
+            "Built with Python • Scikit-Learn • Streamlit"
+        )
 
     st.markdown("---")
 
