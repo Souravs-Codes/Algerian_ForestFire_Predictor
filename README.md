@@ -1,271 +1,158 @@
 # 🔥 Algerian Forest Fire Predictor
 
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Flask](https://img.shields.io/badge/Flask-Web_App-green)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine_Learning-orange)
-![AWS](https://img.shields.io/badge/AWS-Elastic_Beanstalk-yellow)
+An end-to-end **Machine Learning application** that predicts the **Fire Weather Index (FWI)** using meteorological and environmental data from the Algerian Forest Fires dataset.
 
-An end-to-end Machine Learning project that predicts the **Fire Weather Index (FWI)** using weather and environmental data from the Algerian Forest Fires dataset.
+The project covers the complete Machine Learning workflow, including:
 
-The project covers the complete ML workflow from data preprocessing and model training to cloud deployment on AWS using Flask.
+- Data preprocessing
+- Exploratory Data Analysis
+- Feature engineering
+- Feature scaling
+- Model training
+- Model evaluation
+- Model serialization
+- Interactive web application
+- Cloud deployment using Streamlit
 
 ---
 
 ## 🌐 Live Demo
 
-## 📱 Mobile Access Note
+🚀 **Try the application here:**
 
-If the application does not load on mobile devices or displays a connection error, make sure you are using the **HTTP** version of the URL instead of **HTTPS**.
+👉 https://algerianforestfirepredictor-hkpc5h2hxdsdwdjaso72hh.streamlit.app/
 
-✅ Working URL:
-
-```text
-http://algerianforestfirepredictor-env.eba-wa2ustx4.ap-south-1.elasticbeanstalk.com
-```
-
-❌ Do not use:
-
-```text
-https://algerianforestfirepredictor-env.eba-wa2ustx4.ap-south-1.elasticbeanstalk.com
-```
-
-The application is currently deployed using the default AWS Elastic Beanstalk domain, which does not have SSL/HTTPS configured. Future versions will include HTTPS support through a custom domain and SSL certificate.
-
-
-## 🚀 Project Highlights
-
-✅ Data Cleaning & Feature Engineering
-
-✅ Exploratory Data Analysis (EDA)
-
-✅ Feature Scaling using StandardScaler
-
-✅ Ridge Regression Model
-
-✅ Flask Web Application
-
-✅ Model Serialization using Pickle
-
-✅ AWS Elastic Beanstalk Deployment
-
-✅ Real-Time Predictions
+The application allows users to enter weather and environmental parameters and receive a predicted **Fire Weather Index (FWI)** in real time.
 
 ---
 
-## 📌 Problem Statement
+## 🔥 About the Project
 
-Forest fires can cause severe environmental and economic damage. Predicting the Fire Weather Index (FWI) helps estimate fire danger levels and supports better decision-making for fire prevention and management.
+Forest fires can cause significant environmental, economic, and ecological damage.
 
-This project uses meteorological data to predict FWI through a Machine Learning model deployed as a web application.
+The **Fire Weather Index (FWI)** is an important indicator used to estimate fire danger based on weather and environmental conditions.
+
+This project uses Machine Learning to predict the FWI from various meteorological parameters.
+
+The trained model is integrated into a **Streamlit web application**, allowing users to interact with the model directly through a browser.
+
+---
+
+## 🎯 Problem Statement
+
+The objective of this project is to build a Machine Learning model capable of predicting the **Fire Weather Index (FWI)** from weather conditions.
+
+Given environmental inputs such as:
+
+- Temperature
+- Relative Humidity
+- Wind Speed
+- Rainfall
+- FFMC
+- DMC
+- ISI
+- Region
+
+the model predicts the corresponding **FWI value**.
+
+---
+
+## 🚀 Project Highlights
+
+- 🔥 Fire Weather Index prediction
+- 🧹 Data cleaning and preprocessing
+- 📊 Exploratory Data Analysis
+- ⚙️ Feature engineering
+- 📏 Feature scaling using `StandardScaler`
+- 🤖 Ridge Regression model
+- 💾 Model serialization using Pickle
+- 🌐 Interactive Streamlit application
+- ☁️ Cloud deployment using Streamlit
+- ⚡ Real-time prediction
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category             | Technologies          |
-| -------------------- | --------------------- |
-| Programming Language | Python                |
-| Machine Learning     | Scikit-Learn          |
-| Data Processing      | Pandas, NumPy         |
-| Web Framework        | Flask                 |
-| Model Storage        | Pickle                |
-| Cloud Platform       | AWS Elastic Beanstalk |
-| Version Control      | Git & GitHub          |
+| Category | Technologies |
+|---|---|
+| Programming Language | Python |
+| Machine Learning | Scikit-Learn |
+| Regression Model | Ridge Regression |
+| Data Processing | Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn |
+| Feature Scaling | StandardScaler |
+| Model Serialization | Pickle |
+| Web Application | Streamlit |
+| Version Control | Git & GitHub |
+| Deployment | Streamlit Community Cloud |
 
 ---
 
-## 📊 Dataset Features
+## 📊 Dataset
 
-The model uses the following inputs:
+The project uses the **Algerian Forest Fires Dataset**.
 
-* Temperature
-* Relative Humidity (RH)
-* Wind Speed (Ws)
-* Rain
-* FFMC
-* DMC
-* ISI
-* Classes
-* Region
+The dataset contains meteorological and environmental measurements collected from two regions of Algeria.
 
-Target Variable:
+### Input Features
 
-* Fire Weather Index (FWI)
+| Feature | Description |
+|---|---|
+| Temperature | Temperature of the environment |
+| RH | Relative Humidity |
+| Ws | Wind Speed |
+| Rain | Amount of rainfall |
+| FFMC | Fine Fuel Moisture Code |
+| DMC | Duff Moisture Code |
+| ISI | Initial Spread Index |
+| Classes | Fire / Not Fire classification |
+| Region | Geographic region |
+
+### Target Variable
+
+**FWI — Fire Weather Index**
+
+The FWI value represents the potential fire danger based on the given environmental conditions.
 
 ---
 
 ## 🧠 Machine Learning Pipeline
 
 ```text
-Data Collection
-       │
-       ▼
-Data Cleaning
-       │
-       ▼
-Exploratory Data Analysis
-       │
-       ▼
-Feature Engineering
-       │
-       ▼
-Train-Test Split
-       │
-       ▼
-Feature Scaling
-       │
-       ▼
-Ridge Regression Model
-       │
-       ▼
-Model Evaluation
-       │
-       ▼
-Pickle Serialization
-       │
-       ▼
-Flask Application
-       │
-       ▼
-AWS Deployment
-```
-
----
-
-## 📂 Project Structure
-
-```bash
-Algerian_ForestFire_Predictor/
-│
-├── models/
-│   ├── ridgeregression.pkl
-│   └── Scaler.pkl
-│
-├── templates/
-│   ├── home.html
-│   └── index.html
-│
-├── app.py
-├── requirements.txt
-├── README.md
-└── notebooks/
-```
-
----
-
-## ⚙️ Installation
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/Souravs-Codes/Algerian_ForestFire_Predictor.git
-```
-
-### Navigate to Project Directory
-
-```bash
-cd Algerian_ForestFire_Predictor
-```
-
-### Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Run the Application
-
-```bash
-python app.py
-```
-
-Open:
-
-```text
-http://127.0.0.1:5000
-```
-
----
-
-## 📈 Model Used
-
-### Ridge Regression
-
-Ridge Regression is a regularized version of Linear Regression that helps reduce overfitting by penalizing large coefficient values.
-
-Benefits:
-
-* Better generalization
-* Reduced overfitting
-* Handles multicollinearity
-* Stable predictions
-
----
-
-## 📸 Application Screenshots
-
-## 📸 Application Screenshots
-
-### 🏠 Home Page
-
-<p align="center">
-  <img src="Screenshots/Home%20(1).png" width="900">
-</p>
-
----
-
-### 🔥 Features Section
-
-<p align="center">
-  <img src="Screenshots/Features.png" width="900">
-</p>
-
----
-
-### 📊 Prediction Page
-
-<p align="center">
-  <img src="Screenshots/Predictor.png" width="900">
-</p>
-
----
-
-## ☁️ Deployment
-
-The application is deployed using:
-
-* AWS Elastic Beanstalk
-* Python Environment
-* Flask Application
-* Pickle Model Artifacts
-
-This deployment allows users to access the prediction system directly through a web browser without installing any dependencies.
-
----
-
-## 🔮 Future Improvements
-
-* Random Forest Regressor
-* XGBoost Regressor
-* Better UI/UX
-* Real-Time Weather API Integration
-* Prediction History Tracking
-* Docker Containerization
-* CI/CD Pipeline
-
----
-
-## 👨‍💻 Author
-
-### Sourav Mukherjee
-
-GitHub:
-https://github.com/Souravs-Codes
-
----
-
-## ⭐ Support
-
-If you found this project useful, please consider giving it a star on GitHub.
-
-Star ⭐ the repository to support the project.
+              Dataset
+                  │
+                  ▼
+          Data Collection
+                  │
+                  ▼
+            Data Cleaning
+                  │
+                  ▼
+        Exploratory Data Analysis
+                  │
+                  ▼
+        Feature Engineering
+                  │
+                  ▼
+           Train-Test Split
+                  │
+                  ▼
+          Feature Scaling
+        (StandardScaler)
+                  │
+                  ▼
+          Ridge Regression
+                  │
+                  ▼
+          Model Evaluation
+                  │
+                  ▼
+       Model Serialization
+             (Pickle)
+                  │
+                  ▼
+       Streamlit Application
+                  │
+                  ▼
+        Real-Time Prediction
