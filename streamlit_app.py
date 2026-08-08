@@ -899,22 +899,19 @@ if predict_button:
 # FOOTER
 # ============================================================
 
-st.markdown(
-    """
-    <div class="custom-footer">
+st.html("""
+<div class="custom-footer">
 
-        🔥 Algerian Forest Fire Predictor
+    🔥 Algerian Forest Fire Predictor
 
-        <br>
+    <br>
 
-        Machine Learning powered by
-        Ridge Regression
+    Machine Learning powered by
+    Ridge Regression
 
-        <br><br>
+    <br><br>
 
-        Developed by <b>Sourav Mukherjee</b>
+    Developed by <b>Sourav Mukherjee</b>
 
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+</div>
+""")
